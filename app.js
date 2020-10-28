@@ -2,7 +2,7 @@ $(() => {
     const galleryImageTemplate = $('#galleryImageTemplate').html();
     const $container = $('#container');
 
-    list = [];
+    let list = [];
 
     init();
 
