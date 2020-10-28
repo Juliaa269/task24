@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>PhotoGallery</title>
+        <link rel="stylesheet" href="./vendors.css" />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./vendors.js" defer></script>
+        <script src="./app.js" defer></script>
+    </head>
+    <body>
+        <div class="gallery" id="container"></div>
+
+        <div class="fs-gal-view">
+            <h1></h1>
+            <img 
+                class="fs-gal-prev fs-gal-nav" 
+                src="images/prev.svg" 
+                alt="Previous picture" 
+                title="Previous picture" 
+            />
+            <img 
+                class="fs-gal-next fs-gal-nav" 
+                src="images/next.svg" 
+                alt="Next picture" 
+                title="Next picture" 
+            />
+            <img 
+                class="fs-gal-close" 
+                src="images/close.svg" 
+                alt="Close gallery" 
+                title="Close gallery" 
+            />
+            <img 
+                class="fs-gal-main" 
+                src="" 
+                alt=""
+            >
+        </div>
+
+        <script type="text/template" id="galleryImageTemplate">
+            <img 
+                class="fs-gal"
+                alt="{{imageTitle}}"
+                src="{{imageSource}}"
+                data-url="{{imageUrl}}"
+                data-id="{{id}}"
+            >
+        </script>
+    </body>
+</html>
