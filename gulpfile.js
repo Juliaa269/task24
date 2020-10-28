@@ -2,6 +2,7 @@ const {series, src, dest, watch} = require("gulp");
 
 const concat = require("gulp-concat");
 const clean = require("gulp-clean");
+const browsersync = require('browser-sync').create();
 // const uglify = require("gulp-uglify");
 
 function copyHtml() {
@@ -57,6 +58,23 @@ function watchFiles() {
     });
 }
 
+function server(cb) {
+    browsersync.init({
+        server: {
+            baseDir: './dist',
+        },
+    });
+
+    watch('./src/**/*.js', series(copyJs, reloadBrowser));
+    watch('./src/**/*.css', series(copyCss, reloadBrowser));
+    cb();
+}
+
+function reloadBrowser(cb) {
+    browsersync.reload();
+    cb();
+}
+
 function cleanDist() {
     return src("./dist", { read:false })
         .pipe(clean());
@@ -80,6 +98,7 @@ module.exports = {
         copyVendorJs,
         copyVendorCss,
         copyImg,
-        watchFiles
+        // watchFiles,
+        server
     ),
 }

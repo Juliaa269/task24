@@ -14,6 +14,7 @@
     "simplelightbox": "^2.5.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
