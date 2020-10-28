@@ -1,5 +1,4 @@
 $(() => {
-    const IMAGES_URL = 'https://jsonplaceholder.typicode.com/photos/?albumId=2';
     const galleryImageTemplate = $('#galleryImageTemplate').html();
     const $container = $('#container');
 
@@ -12,8 +11,7 @@ $(() => {
     }
 
     function getListPhotos() {
-        return fetch(IMAGES_URL)
-            .then((res) => res.json())
+        return api.getListPhotos()
             .then((data) => (list = data))
             .then(renderList);
     }
